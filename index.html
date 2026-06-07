@@ -1471,18 +1471,6 @@ footer {
           </div>
           <div><label for="email">Email</label><input type="email" id="email" placeholder="tu@email.com"></div>
           <div>
-            <label for="segmento">Tipo de cliente</label>
-            <select id="segmento">
-              <option value="" disabled selected>Seleccioná</option>
-              <option>Hotel</option>
-              <option>Restaurante</option>
-              <option>Empresa</option>
-              <option>Club o institución</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div><label for="mensaje">Mensaje</label><textarea id="mensaje" placeholder="Contanos un poco sobre lo que estás buscando..."></textarea></div>
-          <div>
             <label for="unidades">Cantidad estimada de unidades</label>
             <select id="unidades">
               <option value="">No sé todavía</option>
@@ -1493,6 +1481,7 @@ footer {
               <option>Más de 1.000 unidades</option>
             </select>
           </div>
+          <div><label for="mensaje">Mensaje</label><textarea id="mensaje" placeholder="Contanos un poco sobre lo que estás buscando..."></textarea></div>
           <button class="submit-btn" type="button" id="form-submit-btn" onclick="enviarFormulario()">Enviar consulta →</button>
           <div id="form-feedback" style="display:none; font-size:13px; letter-spacing:.06em; margin-top:.75rem;"></div>
         </div>
@@ -1646,7 +1635,7 @@ async function enviarFormulario() {
   const nombre = document.getElementById('nombre').value.trim();
   const empresa = document.getElementById('empresa').value.trim();
   const email = document.getElementById('email').value.trim();
-  const segmento = document.getElementById('segmento').value;
+  const segmento = '';
   const unidades = document.getElementById('unidades').value;
   const mensaje = document.getElementById('mensaje').value.trim();
 
@@ -1675,7 +1664,6 @@ async function enviarFormulario() {
       document.getElementById('nombre').value = '';
       document.getElementById('empresa').value = '';
       document.getElementById('email').value = '';
-      document.getElementById('segmento').selectedIndex = 0;
       document.getElementById('unidades').selectedIndex = 0;
       document.getElementById('mensaje').value = '';
     } else {
